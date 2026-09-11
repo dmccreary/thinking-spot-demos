@@ -1,0 +1,968 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An intelligent textbook on how we build STEM kit demos at The Thinking Spot bookstore.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/thinking-spot-demos/kits/sw-gc9b72/eye-saccade/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Eye Saccade - Thinking Spot Demos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eye-saccade" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Thinking Spot Demos" class="md-header__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thinking Spot Demos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Eye Saccade
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Thinking Spot Demos" class="md-nav__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Thinking Spot Demos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../why-custom-stem-kits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Custom STEM Kits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../one-pager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STEM Kits One-Pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overcoming-objections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overcoming Objections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-real-eyes-actually-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Real Eyes Actually Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Motion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cheapest-version-is-also-the-most-convincing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Cheapest Version Is Also the Most Convincing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things to Try
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/thinking-spot-demos/blob/main/docs/kits/sw-gc9b72/eye-saccade/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="eye-saccade">Eye Saccade<a class="headerlink" href="#eye-saccade" title="Permanent link">&para;</a></h1>
+<p><a href="../eye-scanner-speedup/">Making the Eye Scanner Fast</a> took one sweeping animation from
+455 milliseconds a frame down to 4.2. This lesson is the sequel, and it makes a point that is
+easy to miss after a hard-won optimization: <strong>the sweep was never the right motion in the first
+place.</strong></p>
+<p>Real eyes almost never glide. Yours are jumping across this line of text right now, three or four
+times a second, in quick flicks with brief stops in between — and that pattern is what your brain
+reads as <em>something is looking</em>.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Watch how I really look around</p>
+<p><img alt="Pixel waving welcome" class="mascot-admonition-img" src="../../../img/mascot/welcome.png" />
+Every pixel tells a story, and this one is about timing rather than drawing. The drawing code barely changes — the behavior changes completely.</p>
+</div>
+<h2 id="what-real-eyes-actually-do">What Real Eyes Actually Do<a class="headerlink" href="#what-real-eyes-actually-do" title="Permanent link">&para;</a></h2>
+<p>Eye movement has two modes, and they have names worth knowing:</p>
+<table>
+<thead>
+<tr>
+<th>Movement</th>
+<th>What it is</th>
+<th>How long it lasts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Saccade</strong></td>
+<td>A fast, ballistic jump to a new target</td>
+<td>30–80 ms</td>
+</tr>
+<tr>
+<td><strong>Fixation</strong></td>
+<td>Holding almost perfectly still while you actually look</td>
+<td>200–400 ms</td>
+</tr>
+<tr>
+<td><strong>Smooth pursuit</strong></td>
+<td>Gliding steadily — what the eye scanner does</td>
+<td>only while tracking something moving</td>
+</tr>
+</tbody>
+</table>
+<p>That last row is the punchline. Smooth motion is a <strong>tracking</strong> behavior. An eye only glides when
+it is following something that moves, so a robot whose eyes glide constantly looks like a machine
+sweeping a sensor, no matter how fast you make it.</p>
+<h2 id="the-motion">The Motion<a class="headerlink" href="#the-motion" title="Permanent link">&para;</a></h2>
+<p>The program keeps a short list of places worth looking, picks one, jumps there in full-size steps,
+and then holds still:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">SACCADE_STEP</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">TARGETS</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">PUPIL_RANGE</span><span class="p">,</span> <span class="n">PUPIL_RANGE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">SACCADE_STEP</span><span class="p">))</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">FIXATION_MIN_MS</span> <span class="o">=</span> <span class="mi">200</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">FIXATION_MAX_MS</span> <span class="o">=</span> <span class="mi">400</span>
+</span></code></pre></div>
+<p><code>TARGETS</code> is the list of gaze positions, spaced <code>SACCADE_STEP</code> apart. Real eyes do not drift to
+arbitrary coordinates — they jump between <em>things</em>, so a short list of destinations is closer to
+the truth than a random number out of a range.</p>
+<p>There is a second, sharper reason those targets are evenly spaced, and it comes straight out of
+the speedup lesson. The sprite that stamps each pupil is built for a move of exactly
+<code>SACCADE_STEP</code>. Because every target is a whole multiple of that step, <strong>every jump is a whole
+number of full-size steps</strong>, and one fixed-size sprite handles every move the program will ever
+make. Break that rule and the sprite has to over-reach, and its corners start landing outside the
+white of the eye.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">saccade_to</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">start</span> <span class="o">=</span> <span class="n">ticks_us</span><span class="p">()</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">while</span> <span class="n">offset</span> <span class="o">!=</span> <span class="n">target</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="k">if</span> <span class="n">target</span> <span class="o">&gt;</span> <span class="n">offset</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            <span class="n">next_offset</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">SACCADE_STEP</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            <span class="n">next_offset</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">-</span> <span class="n">SACCADE_STEP</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">move_pupils</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">next_offset</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="n">offset</span> <span class="o">=</span> <span class="n">next_offset</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">return</span> <span class="n">offset</span><span class="p">,</span> <span class="n">ticks_diff</span><span class="p">(</span><span class="n">ticks_us</span><span class="p">(),</span> <span class="n">start</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>ticks_us()</code> reads a microsecond clock and <code>ticks_diff()</code> subtracts two readings safely, so each
+jump reports its own duration. Compare it against the 30–80 ms a real saccade takes — that is how
+you know whether your robot's eyes move at a speed people recognize.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Irregular beats fast</p>
+<p><img alt="Pixel thinks it through" class="mascot-admonition-img" src="../../../img/mascot/thinking.png" />
+Make every pause exactly 300 ms and the face turns into a metronome. The randomness in the fixation length is doing more work here than any drawing trick.</p>
+</div>
+<h2 id="the-cheapest-version-is-also-the-most-convincing">The Cheapest Version Is Also the Most Convincing<a class="headerlink" href="#the-cheapest-version-is-also-the-most-convincing" title="Permanent link">&para;</a></h2>
+<p>The speedup lesson got the sweep down to 2 drawing calls every 4.2 ms — forever, without pause.
+This program crosses the whole eye in 18 frames and then sends <strong>nothing at all</strong> for the next
+200–400 ms. Measured on a Pico at 24 MHz:</p>
+<table>
+<thead>
+<tr>
+<th>Jump</th>
+<th>Frames</th>
+<th>Measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One step</td>
+<td>1</td>
+<td>3.9 ms</td>
+</tr>
+<tr>
+<td>Half the eye</td>
+<td>7</td>
+<td>27 ms</td>
+</tr>
+<tr>
+<td>The whole eye</td>
+<td>18</td>
+<td>72 ms</td>
+</tr>
+</tbody>
+</table>
+<p>Even the longest jump is followed by a rest three to six times as long, so the worst case is under
+a fifth of the work the sweep does — and it is the version that looks alive.</p>
+<p>Those durations land where they should. A real saccade takes 30–80 ms, and because a jump here is
+a fixed number of equal steps, a <strong>long jump takes proportionally longer than a short one</strong> —
+exactly what real eyes do. Vision researchers call that relationship the <em>main sequence</em>, and this
+program reproduces it without a line of code written for it.</p>
+<p>Being convincing and being cheap are usually opposites. Here they are the same choice, because
+both come from the same fact: <strong>eyes are still most of the time.</strong> All that effort spent making
+the sweep fast bought headroom; switching to saccades spends almost none of it.</p>
+<p>On a robot this is the behavior you want when the machine has to <em>look</em> like it is deciding. A
+collision-avoidance robot that backs away from a wall, then flicks its gaze left, holds, flicks
+right, holds, is doing something an onlooker reads instantly as weighing the options.</p>
+<h2 id="sample-output">Sample Output<a class="headerlink" href="#sample-output" title="Permanent link">&para;</a></h2>
+<p>A saccade caught mid-fixation, gaze held to the left:</p>
+<p><img alt="Round color screen showing two white eyes with pupils shifted left, above a curved white smile" src="sample-output.png" /></p>
+<p>Both pupils always point the same direction. That is what makes a face read as looking <em>at</em>
+something, instead of in two directions at once.</p>
+<h2 id="things-to-try">Things to Try<a class="headerlink" href="#things-to-try" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Run this and <code>eye-scanner-sprite.py</code> back to back and just watch</strong>, without looking at any
+   numbers. One looks like a machine sweeping a sensor; the other looks like something making up
+   its mind. The code is nearly identical — only the motion differs.</li>
+<li><strong>Set both fixation constants to 300</strong> so every pause is the same length, and watch the face
+   turn into a metronome. Then put the randomness back.</li>
+<li><strong>Break the spacing rule on purpose.</strong> Add <code>7</code> to the <code>TARGETS</code> tuple. Some jumps now end with
+   a step smaller than the sprite was built for, the program falls back to redrawing the whole
+   face, and you get a visible flash on exactly those jumps and nowhere else. That flash is what a
+   full redraw looks like on this display — the whole reason this kit works the way it does.</li>
+<li><strong>Add a drift during fixation</strong> — one pixel, every few hundred milliseconds. Real eyes do this
+   too (microsaccades and ocular drift), and a perfectly still face can start to look switched off
+   rather than attentive. You will need a second, smaller pair of sprites for a one-pixel move.</li>
+<li><strong>Make the gaze mean something.</strong> Feed the target choice from a distance sensor instead of a
+   random number, so the robot looks toward whichever side has more room. Now the face is not
+   performing thought — it is reporting it, and anyone watching can read the robot's next move off
+   its eyes before the wheels turn.</li>
+</ol>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">That is a face with a mind behind it</p>
+<p><img alt="Pixel celebrating" class="mascot-admonition-img" src="../../../img/mascot/celebration.png" />
+You made a robot look like it is thinking by changing <em>when</em> you draw, not <em>what</em> you draw — and it costs less than the version that did not. Great expression!</p>
+</div>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../eye-scanner-speedup/">Making the Eye Scanner Fast</a> — the optimization this lesson builds on</li>
+<li><a href="../../smartwatch/eye-saccade/index.md">Eye Saccade (smartwatch kit)</a> — the same behavior on the 240×240 panel</li>
+<li><a href="../../oled/eye-saccade/index.md">Eye Saccade (OLED kit)</a> — the same behavior where every frame costs the same</li>
+<li><a href="../../smartwatch/state-machine/index.md">A Face With a Memory</a> — the natural home for gaze that reacts to events</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1147 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An intelligent textbook on how we build STEM kit demos at The Thinking Spot bookstore.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/thinking-spot-demos/kits/sw-gc9b72/eye-scanner-speedup/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Making the Eye Scanner Fast - Thinking Spot Demos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#making-the-eye-scanner-fast" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Thinking Spot Demos" class="md-header__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thinking Spot Demos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Making the Eye Scanner Fast
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Thinking Spot Demos" class="md-nav__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Thinking Spot Demos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../why-custom-stem-kits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Custom STEM Kits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../one-pager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STEM Kits One-Pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overcoming-objections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overcoming Objections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-program-we-started-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Program We Started With
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-put-a-stopwatch-in-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Put a Stopwatch in the Loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-repaint-only-the-pupils-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Repaint Only the Pupils' Edges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-divide-and-watch-the-theory-collapse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Divide, and Watch the Theory Collapse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-send-more-pixels-in-fewer-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Send More Pixels, in Fewer Calls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-the-baud-rate-that-was-never-there" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: The Baud Rate That Was Never There
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-stopwatch-taught-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Stopwatch Taught Us
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things to Try
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/thinking-spot-demos/blob/main/docs/kits/sw-gc9b72/eye-scanner-speedup/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="making-the-eye-scanner-fast">Making the Eye Scanner Fast<a class="headerlink" href="#making-the-eye-scanner-fast" title="Permanent link">&para;</a></h1>
+<p>A pupil sweeping back and forth is one of the most useful signals a robot can send. Put it on a
+collision-avoidance robot: the robot drives up to a wall, backs away, and scans its eyes left and
+right before turning. Anyone watching reads that instantly as <em>the robot is deciding</em>.</p>
+<p>That trick only works if the eyes move at a believable speed. The version of the eye scanner in
+lab 11 is far too slow, and this page is the story of making it <strong>more than 100 times faster</strong> —
+not by guessing, but by putting a stopwatch inside the program and letting it point at the slow
+part.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Let's find out where the time goes</p>
+<p><img alt="Pixel waving welcome" class="mascot-admonition-img" src="../../../img/mascot/welcome.png" />
+Every pixel tells a story, and so does every microsecond. The best part of this one is that we guessed wrong twice — and the measurements told us both times.</p>
+</div>
+<h2 id="the-program-we-started-with">The Program We Started With<a class="headerlink" href="#the-program-we-started-with" title="Permanent link">&para;</a></h2>
+<p>Lab 11 already does one smart thing: instead of wiping the whole screen, it erases just the two
+boxes the eyes live in. On this display that matters enormously, because there is <strong>no frame
+buffer</strong> — no copy of the picture in memory. Every pixel you draw travels down a wire to the panel
+one at a time, and you watch it arrive.</p>
+<p>But look at what it still does on every single frame:</p>
+<table>
+<thead>
+<tr>
+<th>What lab 11 does each frame</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank two 138 x 84 eye boxes</td>
+<td>23,184 pixels</td>
+</tr>
+<tr>
+<td>Rebuild both white eye ellipses</td>
+<td>16,310 pixels</td>
+</tr>
+<tr>
+<td>Draw both pupils back on top</td>
+<td>1,458 pixels</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>40,952 pixels in 222 drawing calls</strong></td>
+</tr>
+</tbody>
+</table>
+<p>All of that to move a pupil a few pixels sideways. It flickers visibly, and the sweep crawls.
+Timed on a real board, one frame takes <strong>455 milliseconds</strong> — about two frames per second. Hold
+on to that number, because everything below is measured against it.</p>
+<h2 id="step-1-put-a-stopwatch-in-the-loop">Step 1: Put a Stopwatch in the Loop<a class="headerlink" href="#step-1-put-a-stopwatch-in-the-loop" title="Permanent link">&para;</a></h2>
+<p>Here is the move that makes everything else on this page possible. Before changing a single line
+of drawing code, <strong>make the program report how long it takes.</strong></p>
+<p>MicroPython gives you <code>ticks_us()</code>, which returns a running clock in microseconds — millionths of
+a second. You subtract two readings with <code>ticks_diff()</code>, which handles the moment the counter
+rolls over back to zero. Wrap only the part you want to measure, add up several frames, and print
+the average:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">utime</span><span class="w"> </span><span class="kn">import</span> <span class="n">ticks_us</span><span class="p">,</span> <span class="n">ticks_diff</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">start</span> <span class="o">=</span> <span class="n">ticks_us</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">move_pupils</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>                 <span class="c1"># the only thing being timed</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">total_us</span> <span class="o">+=</span> <span class="n">ticks_diff</span><span class="p">(</span><span class="n">ticks_us</span><span class="p">(),</span> <span class="n">start</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">frames</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">if</span> <span class="n">frames</span> <span class="o">==</span> <span class="mi">90</span><span class="p">:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pupil move:&quot;</span><span class="p">,</span> <span class="n">total_us</span> <span class="o">//</span> <span class="n">frames</span><span class="p">,</span> <span class="s2">&quot;us per frame&quot;</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">frames</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">total_us</span> <span class="o">=</span> <span class="mi">0</span>
+</span></code></pre></div>
+<p>Averaging over 90 frames matters. A single frame bounces around, but 90 of them give a number
+steady enough to compare against the next version you write.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Measure first, optimize second</p>
+<p><img alt="Pixel gives a tip" class="mascot-admonition-img" src="../../../img/mascot/tip.png" />
+Four lines of timing code taught us more than an hour of reading the program. Without them, we would have "fixed" the wrong thing twice and never known.</p>
+</div>
+<h2 id="step-2-repaint-only-the-pupils-edges">Step 2: Repaint Only the Pupils' Edges<a class="headerlink" href="#step-2-repaint-only-the-pupils-edges" title="Permanent link">&para;</a></h2>
+<p>The first idea is the obvious one. Since only the pupils move, why repaint the eyes at all?</p>
+<p>When a solid circle slides sideways by <code>dx</code> pixels, only two thin crescents actually change. The
+<strong>leading edge</strong> is the strip the pupil just covered, and it needs to become black. The <strong>trailing
+edge</strong> is the strip the pupil just left behind, and it needs to go back to eye-white. Everything
+between them was black before and is still black.</p>
+<p>On each row of the pupil, both of those strips are exactly <code>dx</code> pixels wide:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">if</span> <span class="n">dx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">for</span> <span class="n">row</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">PUPIL_SPANS</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">display</span><span class="o">.</span><span class="n">fill_rect</span><span class="p">(</span><span class="n">old_x</span> <span class="o">+</span> <span class="n">edge</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">PUPIL_COLOR</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">display</span><span class="o">.</span><span class="n">fill_rect</span><span class="p">(</span><span class="n">old_x</span> <span class="o">-</span> <span class="n">edge</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">TRAIL_COLOR</span><span class="p">)</span>
+</span></code></pre></div>
+<p>That is <a href="https://github.com/dmccreary/robot-faces/blob/master/src/kits/sw-gc9b72/eye-scanner-fast.py"><code>eye-scanner-fast.py</code></a>,
+and on paper it looks like a triumph. It sends <strong>330 times fewer pixels</strong> than lab 11.</p>
+<p>Then we ran it with the stopwatch in place:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pupil move: 118117 us per frame
+</span></code></pre></div>
+<p><strong>118 milliseconds.</strong> After cutting the pixels by 330 times. Something in our picture of this
+program was badly wrong.</p>
+<h2 id="step-3-divide-and-watch-the-theory-collapse">Step 3: Divide, and Watch the Theory Collapse<a class="headerlink" href="#step-3-divide-and-watch-the-theory-collapse" title="Permanent link">&para;</a></h2>
+<p>When a measurement makes no sense, divide it by something. We knew this version made exactly 76
+drawing calls per frame, so:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>118 ms ÷ 76 calls = 1.55 ms per call
+</span></code></pre></div>
+<p>One and a half <strong>milliseconds</strong> to draw a run seven pixels long. Now count the other side of the
+ledger: 860 pixels is 1,720 bytes, which is about 1.4 ms of actual wire time. So <strong>98% of the
+frame was spent on something other than pixels.</strong></p>
+<p>That something is the fixed price of a drawing call. Before a single pixel of yours moves, the
+driver has to send a CASET command naming the columns, a RASET command naming the rows, a RAMWR
+command saying "here comes pixel data," and toggle the chip-select line four times. You pay that
+whether you then send 7 pixels or 7,000.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">You were optimizing the cheap half</p>
+<p><img alt="Pixel thinks it through" class="mascot-admonition-img" src="../../../img/mascot/thinking.png" />
+Pixels are not the bill on this display — calls are. Once we knew that, the fix went from "send fewer pixels" to almost exactly the opposite.</p>
+</div>
+<p>This also explained something odd we could see. At larger step sizes, faint trails appeared at the
+top and bottom of each pupil. Nothing was wrong with the final picture — we checked every pixel
+against a full redraw and they matched exactly. A 118 ms frame simply lasts about seven screen
+refreshes, so the panel kept showing the pupil <strong>half-moved</strong>, over and over. We were watching the
+redraw happen.</p>
+<h2 id="step-4-send-more-pixels-in-fewer-calls">Step 4: Send More Pixels, in Fewer Calls<a class="headerlink" href="#step-4-send-more-pixels-in-fewer-calls" title="Permanent link">&para;</a></h2>
+<p>If calls are expensive and bytes are cheap, then the right move is to stop being clever about
+pixels and get greedy about calls.</p>
+<p>A pupil that moves <code>STEP</code> pixels only ever disturbs one rectangle: <code>2r+1+STEP</code> wide and <code>2r+1</code>
+tall, covering both where the pupil <em>was</em> and where it is <em>going</em>. Every pixel inside that
+rectangle is either pupil-black or eye-white — and we know which one before the program even
+starts.</p>
+<p>So build that rectangle once in memory, as a <strong>sprite</strong>: a small block of pixels stored in RAM,
+two bytes per pixel, ready to be shipped in one piece. Then stamp it with a single call:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">display</span><span class="o">.</span><span class="n">blit_buffer</span><span class="p">(</span><span class="n">sprite</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">SPRITE_TOP</span><span class="p">,</span> <span class="n">SPRITE_W</span><span class="p">,</span> <span class="n">SPRITE_H</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>blit_buffer()</code> sends a whole rectangle in one command sequence. Two eyes, two calls, whole frame
+done. That is
+<a href="https://github.com/dmccreary/robot-faces/blob/master/src/kits/sw-gc9b72/eye-scanner-sprite.py"><code>eye-scanner-sprite.py</code></a>:</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Pixels per frame</th>
+<th>Calls per frame</th>
+<th>Measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lab 11</td>
+<td>40,952</td>
+<td>222</td>
+<td>455 ms</td>
+</tr>
+<tr>
+<td>Edge repaint (<code>STEP = 7</code>)</td>
+<td>860</td>
+<td>76</td>
+<td>118 ms</td>
+</tr>
+<tr>
+<td>Sprite stamp (<code>STEP = 7</code>)</td>
+<td>2,356</td>
+<td>2</td>
+<td>8.1 ms</td>
+</tr>
+<tr>
+<td><strong>Sprite stamp (<code>STEP = 1</code>)</strong></td>
+<td><strong>1,984</strong></td>
+<td><strong>2</strong></td>
+<td><strong>7.2 ms</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Read that table twice. The winning version sends almost <strong>three times more pixels</strong> than the one
+it beats, and it is <strong>14 times faster</strong>, because it makes 38 times fewer calls.</p>
+<p>Notice the last row too. In the edge version a bigger <code>STEP</code> was free, so we pushed it to 7 to
+hide a slow frame. In the sprite version a bigger step means a <em>wider sprite</em>, so <code>STEP = 1</code> is
+both smoother <strong>and</strong> cheaper. It crosses the eye in 90 gentle frames instead of 13 jumpy ones.</p>
+<p>There is a bonus. All 76 of the old calls were spread across the frame, so the panel caught the
+pupil mid-move. One <code>blit_buffer()</code> is a single uninterrupted stream, so there is no half-drawn
+state left to catch — and the trails disappeared.</p>
+<h2 id="step-5-the-baud-rate-that-was-never-there">Step 5: The Baud Rate That Was Never There<a class="headerlink" href="#step-5-the-baud-rate-that-was-never-there" title="Permanent link">&para;</a></h2>
+<p>Now that the program was finally sending a meaningful number of bytes, the SPI clock speed started
+to matter. <strong>Baud rate</strong> is how fast bits travel down the wire, set by <code>config.BAUDRATE</code>.</p>
+<p>We tried raising it from 10 MHz to 20 and then 30, and nothing changed. Reading the number back
+off the running board explained why — twice over:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>config.BAUDRATE : 10000000
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>SPI reports     : SPI(0, baudrate=8000000, ...)
+</span></code></pre></div>
+<p>The first line showed the edit had never reached the board. The second showed something sneakier:
+even when it does reach the board, <strong>10 MHz is not 10 MHz.</strong> The Pico builds its SPI clock by
+dividing a 48 MHz source and rounding <em>down</em>, so only a few speeds actually exist:</p>
+<table>
+<thead>
+<tr>
+<th>You ask for</th>
+<th>You get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8 – 11 MHz</td>
+<td>8 MHz</td>
+</tr>
+<tr>
+<td>12 – 23 MHz</td>
+<td>12 MHz</td>
+</tr>
+<tr>
+<td>24 MHz and above</td>
+<td>24 MHz (the ceiling)</td>
+</tr>
+</tbody>
+</table>
+<p>There is nothing at all between 12 and 24. Ask for 20 MHz and you quietly get 12.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Ask the hardware, don't trust the constant</p>
+<p><img alt="Pixel warns about a mistake" class="mascot-admonition-img" src="../../../img/mascot/warning.png" />
+Print the SPI object and it tells you the truth about its own clock — <code>print(SPI(0, baudrate=24_000_000, sck=Pin(2), mosi=Pin(3)))</code>. A setting you never confirmed is a guess wearing a number.</p>
+</div>
+<p>With the clock actually set to 24 MHz, the sprite version measured <strong>4.2 ms per frame</strong>. Timing
+lab 11 at the same three speeds shows something even more useful:</p>
+<table>
+<thead>
+<tr>
+<th>Actual SPI clock</th>
+<th>Lab 11</th>
+<th>Sprite version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8 MHz</td>
+<td>455 ms</td>
+<td>7.2 ms</td>
+</tr>
+<tr>
+<td>12 MHz</td>
+<td>420 ms</td>
+<td>6.1 ms</td>
+</tr>
+<tr>
+<td>24 MHz</td>
+<td>387 ms</td>
+<td><strong>4.2 ms</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Tripling the clock speeds lab 11 up by only 15%, but nearly halves the sprite version. That is the
+whole lesson in one table. Lab 11 is limited by its 222 calls, and a call costs the same at any
+clock speed. The sprite version makes only 2 calls, so what is left really is bytes on a wire —
+and bytes are what a faster clock moves.</p>
+<h2 id="what-the-stopwatch-taught-us">What the Stopwatch Taught Us<a class="headerlink" href="#what-the-stopwatch-taught-us" title="Permanent link">&para;</a></h2>
+<p>Four numbers, measured on a real board with
+<a href="https://github.com/dmccreary/robot-faces/blob/master/src/kits/sw-gc9b72/spi-cost.py"><code>spi-cost.py</code></a>,
+now explain every drawing decision in this kit:</p>
+<ul>
+<li><strong>A drawing call costs about 1 millisecond</strong>, no matter how fast the SPI clock runs. It is
+  commands and chip-select toggles, not pixels.</li>
+<li><strong>The wire delivers about 84% of the baud rate you set</strong>, so the clock is a real lever — but only
+  once your call count is low enough for bytes to be the bigger half of the bill.</li>
+<li>The cost of any drawing operation is just <code>fixed + (bytes × cost_per_byte)</code>.</li>
+<li>Guessing which half dominates is how you spend a day making something 330 times better at the
+  thing that was never the problem.</li>
+</ul>
+<h2 id="sample-output">Sample Output<a class="headerlink" href="#sample-output" title="Permanent link">&para;</a></h2>
+<p>Here is the part that surprises people most. All three versions draw <strong>exactly</strong> the same face —
+we compared every pixel against a full redraw and found zero differences.</p>
+<p><img alt="Two white eyes with dark pupils and a curved smile on a round black screen" src="../eye-scanner/sample-output.png" /></p>
+<p>The picture never changed. Only the number of calls it took to produce it changed — and that took
+the frame from two per second to <strong>239 per second</strong>.</p>
+<h2 id="things-to-try">Things to Try<a class="headerlink" href="#things-to-try" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Run lab 11 at 24 MHz and predict the result first.</strong> Write down what you expect, then
+   measure. It gets only 15% faster, and being surprised by that is the fastest way to really
+   believe that calls, not pixels, were the bill.</li>
+<li><strong>Change <code>STEP</code> in the sprite version and watch the sprite size change with it.</strong> Every extra
+   pixel of step is 62 more bytes on the wire per frame. <code>STEP = 1</code> is the cheapest and the
+   smoothest — the exact opposite of how <code>STEP</code> behaved in the edge version.</li>
+<li><strong>Set <code>SPRITE_BACKGROUND = config.RED</code>.</strong> The rectangle being stamped every frame lights up, and
+   you can see how much of it is white being repainted as white. That is the honest cost of this
+   approach, and it still wins.</li>
+<li><strong>Run <code>spi-cost.py</code> at 8, 12 and 24 MHz</strong> and put the three throughput lines side by side. Now
+   you know your own board's numbers instead of borrowing someone else's.</li>
+<li><strong>Make it look like real thinking.</strong> Eyes do not sweep smoothly unless they are tracking
+   something moving. Real gaze <em>jumps</em> in 30–80 ms and then holds still for 200–400 ms. Try
+   picking a random target, getting there in two steps, then sleeping a third of a second. It
+   draws <em>fewer</em> frames than the sweep, so it costs less — and for a robot deciding which way to
+   turn, it reads far more like deliberation.</li>
+</ol>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">From flicker to 217 frames per second</p>
+<p><img alt="Pixel celebrating" class="mascot-admonition-img" src="../../../img/mascot/celebration.png" />
+You just watched a program go from 455 ms a frame to 4.2 ms because someone printed a number instead of trusting a hunch. That habit is worth more than any single optimization in this book.</p>
+</div>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../smartwatch/eye-scanner/index.md">Eye Scanner</a> — the original lab this page speeds up</li>
+<li><a href="../../smartwatch/partial-redraw/index.md">Only Redraw What Changed</a> — where erasing one box instead of the screen is measured</li>
+<li><a href="../../smartwatch/draw-speed-timing/index.md">How Fast Is a Face?</a> — the lab that first times drawing calls</li>
+<li><a href="../../smartwatch/blit/index.md">Blitting Sprites</a> — where <code>blit_buffer()</code> and RGB565 sprite memory are introduced</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

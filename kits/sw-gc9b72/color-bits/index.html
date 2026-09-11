@@ -1,0 +1,1014 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An intelligent textbook on how we build STEM kit demos at The Thinking Spot bookstore.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/thinking-spot-demos/kits/sw-gc9b72/color-bits/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Color and Bits - Thinking Spot Demos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#color-and-bits" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Thinking Spot Demos" class="md-header__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thinking Spot Demos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Color and Bits
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Thinking Spot Demos" class="md-nav__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Thinking Spot Demos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../why-custom-stem-kits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Custom STEM Kits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../one-pager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STEM Kits One-Pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overcoming-objections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overcoming Objections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-whole-encoding-in-one-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Whole Encoding, in One Line
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-questions-worth-answering-before-you-press-a-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Questions Worth Answering Before You Press a Button
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five Views
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nothing-here-quantizes-on-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nothing Here Quantizes on Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button-b-counts-instead-of-asserting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button B Counts Instead of Asserting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things to Try
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/thinking-spot-demos/blob/main/docs/kits/sw-gc9b72/color-bits/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="color-and-bits">Color and Bits<a class="headerlink" href="#color-and-bits" title="Permanent link">&para;</a></h1>
+<p>On the OLED kit a pixel was one bit. On or off. There was nothing to ask about it, and no lab could
+have been written on the subject. On the <a href="../../smartwatch/color-bits/index.md">1.2" smartwatch kit</a>
+a pixel became a 16-bit number, and this lab is that same lesson, carried over unchanged, on a
+bigger screen.</p>
+<p>Here a pixel is a 16-bit number, and there is a great deal to ask. This is the one lab in the kit
+that a monochrome display could not have taught, and what it teaches is <strong>representation</strong> — how a
+real thing gets squeezed into a fixed number of bits, and what falls out along the way.</p>
+<p>That question is not about displays. It is the same question behind MP3s, JPEGs, floating point, and
+every file format you will ever open.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Sixteen million colors go in. Sixty-five thousand come out.</p>
+<p><img alt="Pixel waving welcome" class="mascot-admonition-img" src="../../../img/mascot/welcome.png" />
+Something got thrown away in there, on purpose, by somebody who thought carefully about which parts you would miss least. Let's find out what — and why.</p>
+</div>
+<h2 id="the-whole-encoding-in-one-line">The Whole Encoding, in One Line<a class="headerlink" href="#the-whole-encoding-in-one-line" title="Permanent link">&para;</a></h2>
+<p>This is <code>color565()</code>, straight from <code>lib/gc9b72.py</code>:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">color565</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">red</span> <span class="o">&amp;</span> <span class="mh">0xF8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span> <span class="o">|</span> <span class="p">(</span><span class="n">green</span> <span class="o">&amp;</span> <span class="mh">0xFC</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">blue</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span>
+</span></code></pre></div>
+<p>It is the same function, bit for bit, that the 1.2" kit's <code>lib/gc9a01.py</code> carries — the masks and
+shifts did not change even though the driver underneath them did. That is worth pausing on: nothing
+about this lab's math changed when the screen grew. Three 0–255 numbers go in. One 16-bit number
+comes out:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bit  15 14 13 12 11 | 10 9 8 7 6 5 | 4 3 2 1 0
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>     R  R  R  R  R  | G  G G G G G | B B B B B
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        5 bits      |    6 bits    |   5 bits
+</span></code></pre></div>
+<p>5 + 6 + 5 = 16. Count what that costs: you handed over 8 bits per channel and got back 5, 6, and 5.</p>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Bits in</th>
+<th>Bits out</th>
+<th>Distinct levels that survive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>8</td>
+<td>5</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>8</td>
+<td><strong>6</strong></td>
+<td><strong>64</strong></td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>8</td>
+<td>5</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+<h2 id="two-questions-worth-answering-before-you-press-a-button">Two Questions Worth Answering Before You Press a Button<a class="headerlink" href="#two-questions-worth-answering-before-you-press-a-button" title="Permanent link">&para;</a></h2>
+<p><strong>Why does green get the extra bit?</strong> Your eye is not an equal-opportunity detector. Most of your
+sense of brightness comes from green light, some from red, and very little from blue. Spending the
+one spare bit on green puts it where you are most likely to notice.</p>
+<p><strong>Why not just store all 24 bits?</strong> Do the arithmetic for this screen:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Bytes for a 360×360 screen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RGB565, 2 bytes per pixel</td>
+<td>259,200</td>
+</tr>
+<tr>
+<td>24-bit color, 3 bytes per pixel</td>
+<td>388,800</td>
+</tr>
+<tr>
+<td>RP2040 RAM, total</td>
+<td>270,336 (264 KB)</td>
+</tr>
+</tbody>
+</table>
+<p>An RP2040 has 264 KB of RAM, and MicroPython is already using a chunk of it before your program even
+starts. Even the 16-bit figure — 259,200 bytes, about 253 KB — barely leaves room for the code that
+would have to hold it, and the 24-bit figure is bigger than the chip's entire memory, full stop.
+<strong>That is the same arithmetic that explains why this driver has no frame buffer and why there is no
+<code>show()</code> in this kit</strong> — on the smaller kit the same argument ran on 115,200 and 172,800 bytes, with
+more slack in it. A bigger screen does not make this problem smaller; it makes it worse.</p>
+<h2 id="five-views">Five Views<a class="headerlink" href="#five-views" title="Permanent link">&para;</a></h2>
+<p>Button A steps through them; button B prints the numbers behind whichever one you are looking at to
+the Thonny shell.</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bit layout</td>
+<td>The three fields at their true relative widths — 75, 90, 75 pixels for 5, 6, 5 bits</td>
+</tr>
+<tr>
+<td>Red vs green</td>
+<td>Two ramps side by side. Count the bands: 32 against 64</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>Blue alone, so its dimness is impossible to miss</td>
+</tr>
+<tr>
+<td>All channels</td>
+<td>All three together — the bands nearly vanish</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>The arithmetic above, on screen</td>
+</tr>
+</tbody>
+</table>
+<p>Here's the first view:</p>
+<p><img alt="The bit layout view: a black round screen reading RGB565 and 16 bits per pixel, a horizontal bar split into a red, green and blue segment with green visibly widest, labeled R:5 G:6 B:5, and the caption green gets the spare bit" src="sample-output.png" /></p>
+<p>Look at the widths of those three colored blocks. They are not decoration — they are 75, 90, and 75
+pixels wide, in the same proportion as 5, 6, and 5 bits. That bar got wider along with the screen; the
+bits it is dividing did not change at all, which is exactly the point of this lab.</p>
+<h2 id="nothing-here-quantizes-on-purpose">Nothing Here Quantizes on Purpose<a class="headerlink" href="#nothing-here-quantizes-on-purpose" title="Permanent link">&para;</a></h2>
+<p>That is the clever part of the ramp views. The code asks for all 256 levels, one per column across a
+280-pixel-wide band:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">ramp</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">channel</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Draw a smooth 0-255 sweep of one channel and let the encoding</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    break it into bands.</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    Nothing here is quantizing on purpose. We ask for all 256 levels,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">    one per column-ish, and color565() throws away the low bits on the</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="sd">    way past. The stripes you see ARE the bits that did not fit.&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<p>The stripes are not drawn. They are what is left when the encoder discards what it cannot keep. The
+ramps live in a 280-pixel-wide band rather than a naive scaled-up 300, because the caption above each
+ramp sits farther from center than the ramp itself — on a round screen, the widest thing in a column
+decides where the whole column is allowed to start.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Errors That Do Not Line Up Cancel Out</p>
+<p><img alt="Pixel thinks it through" class="mascot-admonition-img" src="../../../img/mascot/thinking.png" />
+In the all-channels view the banding nearly disappears, and the reason is worth knowing: red, green and blue each round at different points, so a step in one is hidden by the other two moving with it. Independent errors are much less visible than one big one.</p>
+</div>
+<h2 id="button-b-counts-instead-of-asserting">Button B Counts Instead of Asserting<a class="headerlink" href="#button-b-counts-instead-of-asserting" title="Permanent link">&para;</a></h2>
+<p>Press it on a ramp view and the program asks for all 256 levels of each channel and <strong>counts how
+many survive</strong>:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span> <span class="n">channel</span><span class="p">,</span> <span class="n">shift</span><span class="p">,</span> <span class="n">mask</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mh">0x1f</span><span class="p">),</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                             <span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mh">0x3f</span><span class="p">),</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                             <span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x1f</span><span class="p">)):</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="k">if</span> <span class="n">channel</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            <span class="n">packed</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">color565</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="k">elif</span> <span class="n">channel</span> <span class="o">==</span> <span class="s2">&quot;green&quot;</span><span class="p">:</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            <span class="n">packed</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">color565</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="n">packed</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">color565</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">packed</span> <span class="o">&gt;&gt;</span> <span class="n">shift</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">%-5s</span><span class="s2"> 256 levels in -&gt; </span><span class="si">%d</span><span class="s2"> distinct out&quot;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>          <span class="o">%</span> <span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">seen</span><span class="p">)))</span>
+</span></code></pre></div>
+<p>The answer is not asserted anywhere in that code — it is measured. That is the same habit the
+<a href="../trace-and-watch/">trace</a>, <a href="../partial-redraw/">redraw</a>, and
+<a href="../draw-speed-timing/">timing</a> labs have been building.</p>
+<h2 id="things-to-try">Things to Try<a class="headerlink" href="#things-to-try" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Count the bands in the red ramp</strong> before you count the green ones. This screen makes it a
+   little easier than the 1.2" kit did: the same 32 bands are spread across 280 pixels instead of
+   200, so each one is wider and easier to pick out by eye.</li>
+<li><strong>Press B on the ramp view</strong> and compare the counted answer to the one you got by eye.</li>
+<li><strong>Work out <code>color565(255, 0, 0)</code> on paper</strong>, then press B and check. Hint: <code>255 &amp; 0xF8 = 248</code>,
+   and <code>248 &lt;&lt; 8 = 0xF800</code>.</li>
+<li><strong>Predict <code>color565(7, 3, 7)</code>.</strong> All three values are small enough to be thrown away entirely, so
+   the answer is pure black — which means there are 8 × 4 × 8 = 256 different "colors" your code can
+   name that this display renders identically.</li>
+<li><strong>Go back to the <a href="../emotion-table/">emotion table</a></strong> and look at why every color there is
+   a pale mix rather than a pure channel. You now know exactly what that decision was buying.</li>
+</ol>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../emotion-table/">The Emotion Table</a> — where <code>config.color565()</code> is first used in anger</li>
+<li><a href="../color-wheel/">The Color Wheel</a> — all 65,536 colors in one circle, and whether this
+  bigger screen finally has room to show them</li>
+<li><a href="../blit/">Blitting Buffers</a> — where two bytes per pixel first showed up as a memory bill</li>
+<li><a href="../../smartwatch/color-bits/index.md">Color and Bits on the 1.2" kit</a> — the same lab, the same
+  math, a smaller screen and a smaller memory bill</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

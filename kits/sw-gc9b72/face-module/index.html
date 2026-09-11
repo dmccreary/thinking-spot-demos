@@ -1,0 +1,1111 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An intelligent textbook on how we build STEM kit demos at The Thinking Spot bookstore.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/thinking-spot-demos/kits/sw-gc9b72/face-module/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>The Face Module - Thinking Spot Demos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-face-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Thinking Spot Demos" class="md-header__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thinking Spot Demos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Face Module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Thinking Spot Demos" class="md-nav__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Thinking Spot Demos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../why-custom-stem-kits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Custom STEM Kits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../one-pager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STEM Kits One-Pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overcoming-objections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overcoming Objections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-ideas-with-real-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Ideas With Real Names
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-facts-live-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the Facts Live Now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-expressions-in-nine-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Expressions in Nine Lines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-label-uses-a-different-font-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Label Uses a Different Font Here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notice-what-is-missing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notice What Is Missing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-mouth-function-instead-of-six" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Mouth Function Instead of Six
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-trade-you-are-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Trade You Are Making
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things to Try
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/thinking-spot-demos/blob/main/docs/kits/sw-gc9b72/face-module/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="the-face-module">The Face Module<a class="headerlink" href="#the-face-module" title="Permanent link">&para;</a></h1>
+<p>Open the <a href="../emotion-modes/">expression menu</a> and the
+<a href="../face-parameters/">live tuning lab</a> side by side. Both define a function that draws an
+eye. Both define one that draws an eyebrow. Both define a mouth. The definitions are nearly
+identical, and every program you have written for this kit has been carrying its own private copy.</p>
+<p>That duplication is about to become a superpower, because getting rid of it is the single
+highest-leverage move in programming.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Time to clean up the workshop</p>
+<p><img alt="Pixel waving welcome" class="mascot-admonition-img" src="../../../img/mascot/welcome.png" />
+You already know how to draw every part of my face. This lesson is about writing it down once, in one place, so you never have to write it again. Every pixel tells a story!</p>
+</div>
+<h2 id="two-ideas-with-real-names">Two Ideas With Real Names<a class="headerlink" href="#two-ideas-with-real-names" title="Permanent link">&para;</a></h2>
+<p>This lab does not teach a single new drawing command. It teaches two ways of thinking that computer
+scientists named a long time ago, because they matter that much.</p>
+<p><strong>Decomposition</strong> means breaking a problem into parts small enough to name. A face is not one thing
+you draw — it is eyes, plus eyebrows, plus a mouth. Once each part has a name, you can work on one
+without holding the other two in your head.</p>
+<p><strong>Abstraction</strong> means hiding <em>how</em> a part works behind <em>what</em> it is called. After this lab you will
+write <code>face.eyes(36, 36)</code> and stop thinking about ellipses entirely. The ellipse is still there; you
+just do not have to look at it anymore.</p>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>The question it answers</th>
+<th>What it looks like in code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decomposition</td>
+<td>What are the pieces?</td>
+<td>Separate functions for eyes, eyebrows, and mouth</td>
+</tr>
+<tr>
+<td>Abstraction</td>
+<td>What do I call this piece, and what can I forget?</td>
+<td><code>face.eyes(36, 36)</code> instead of four <code>shapes.ellipse()</code> calls</td>
+</tr>
+</tbody>
+</table>
+<h2 id="where-the-facts-live-now">Where the Facts Live Now<a class="headerlink" href="#where-the-facts-live-now" title="Permanent link">&para;</a></h2>
+<p>Your kit already had one shared file, <code>config.py</code>, holding the <strong>hardware</strong> facts — which pin the
+clock is on, how many pixels wide the screen is, where the circle's center sits.</p>
+<p><code>face.py</code> does the same job for the <strong>face</strong> facts: how far apart the eyes sit, how long an eyebrow
+is, how to draw each style of mouth, and what color it all draws in.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it knows</th>
+<th>Lives at</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config.py</code></td>
+<td>Pins, screen size, circle geometry</td>
+<td>The kit root</td>
+</tr>
+<tr>
+<td><code>face.py</code></td>
+<td>Eye spacing, brow length, mouth styles, colors</td>
+<td>The kit root</td>
+</tr>
+<tr>
+<td><code>lib/shapes.py</code></td>
+<td>Generic geometry — ellipse, poly, ring</td>
+<td><code>lib/</code></td>
+</tr>
+</tbody>
+</table>
+<p>That split is about what each file knows. <code>config.py</code> and <code>face.py</code> describe <em>this</em> kit. <code>shapes.py</code>
+never mentions the kit at all, which is why it lives in <code>lib/</code> and why it is the one file that moved
+to this second round-display kit completely unchanged.</p>
+<h2 id="three-expressions-in-nine-lines">Three Expressions in Nine Lines<a class="headerlink" href="#three-expressions-in-nine-lines" title="Permanent link">&para;</a></h2>
+<p>Here is the payoff. Lab 19, the expression menu, spends about 70 lines defining face parts before it
+draws anything. With <code>face.py</code> doing that work, three complete expressions — happy, sad, and
+surprised — take nine.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">face</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">utime</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># The names below come from face.py. Nothing is redefined here -- if you</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># ever want to change how an eyebrow is drawn, there is now exactly one</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># place to change it, and every lab gets the fix.</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">happy</span><span class="p">():</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">face</span><span class="o">.</span><span class="n">eyes</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">face</span><span class="o">.</span><span class="n">eyebrows</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lift</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">face</span><span class="o">.</span><span class="n">mouth</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">SMILE</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">sad</span><span class="p">():</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">face</span><span class="o">.</span><span class="n">eyes</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">33</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">face</span><span class="o">.</span><span class="n">eyebrows</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">lift</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="n">face</span><span class="o">.</span><span class="n">mouth</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">FROWN</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="k">def</span><span class="w"> </span><span class="nf">surprised</span><span class="p">():</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="n">face</span><span class="o">.</span><span class="n">eyes</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">)</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="n">face</span><span class="o">.</span><span class="n">eyebrows</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lift</span><span class="o">=</span><span class="mi">21</span><span class="p">)</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="n">face</span><span class="o">.</span><span class="n">mouth</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">OPEN</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">39</span><span class="p">)</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1"># A list of (name, function) pairs, the same shape lab 18 used for modes.</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">EXPRESSIONS</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="p">(</span><span class="s2">&quot;Happy&quot;</span><span class="p">,</span> <span class="n">happy</span><span class="p">),</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="p">(</span><span class="s2">&quot;Sad&quot;</span><span class="p">,</span> <span class="n">sad</span><span class="p">),</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="p">(</span><span class="s2">&quot;Surprised&quot;</span><span class="p">,</span> <span class="n">surprised</span><span class="p">),</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">)</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">draw</span><span class="p">):</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The one place that knows the clear-draw-label sequence. Every</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="sd">    expression above trusts this function to handle it.&quot;&quot;&quot;</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="n">face</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    <span class="n">draw</span><span class="p">()</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>    <span class="n">face</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">draw</span> <span class="ow">in</span> <span class="n">EXPRESSIONS</span><span class="p">:</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>        <span class="n">show</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">draw</span><span class="p">)</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>        <span class="n">sleep</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Here's the first expression in the cycle:</p>
+<p><img alt="The word Happy in white at the top of the circle above a white face: flat eyebrows, round eyes with dark pupils, and a wide curved smile" src="sample-output.png" /></p>
+<h2 id="the-label-uses-a-different-font-here">The Label Uses a Different Font Here<a class="headerlink" href="#the-label-uses-a-different-font-here" title="Permanent link">&para;</a></h2>
+<p>That <code>face.label(name)</code> call inside <code>show()</code> is doing more work on this kit than it looks like.
+Bitmap fonts are fixed-size glyphs — they do not get bigger just because the screen did — so on a
+360×360 panel the same small font the 1.2" kit uses for labels would cover an even smaller slice of
+the glass, not a bigger one. <code>face.py</code> answers that by drawing <code>label()</code> in a wider 16×32 font
+instead, which is why "Happy" reads clearly from across a room in the picture above.</p>
+<p>That switch was not free. <code>text()</code> paints a solid background behind every glyph, so doubling the
+font doubled the label's black band from 16 rows to 32. A naively scaled position would place the
+label at row 45, covering rows 45 through 76. But the tallest eyebrow in the kit — Afraid's, with a
+lift of 11 and a tilt of 18 — reaches row 64, right inside that band. <code>face.LABEL_Y</code> sits at 32
+instead, so the band covers rows 32 through 63 and clears that eyebrow by exactly one row. That is
+also why labels on this kit top out around 12 characters.</p>
+<h2 id="notice-what-is-missing">Notice What Is Missing<a class="headerlink" href="#notice-what-is-missing" title="Permanent link">&para;</a></h2>
+<p>There is no display <code>show()</code> call anywhere inside that <code>show()</code> function — the shared name is a
+coincidence. <code>face.clear()</code> paints black, the drawing calls go straight to the glass, and that is
+the entire cycle.</p>
+<p>Compare all three kits and you can see the abstraction absorbing a hardware difference and a
+screen-size difference at the same time:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>OLED kit's <code>face.py</code></th>
+<th>1.2" kit's <code>face.py</code></th>
+<th>This kit's <code>face.py</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Draw a shape</td>
+<td>Pokes bits in a RAM buffer</td>
+<td>Sends bytes over SPI</td>
+<td>Sends bytes over SPI</td>
+</tr>
+<tr>
+<td>End of a frame</td>
+<td><code>oled.show()</code> — required</td>
+<td>Nothing — already on the glass</td>
+<td>Nothing — already on the glass</td>
+</tr>
+<tr>
+<td>Erase</td>
+<td><code>oled.fill(0)</code>, essentially free</td>
+<td><code>face.erase(x, y, w, h)</code>, sized to the change</td>
+<td><code>face.erase(x, y, w, h)</code>, sized to the change</td>
+</tr>
+<tr>
+<td>What the lab code looks like</td>
+<td><code>face.eyes(10, 10)</code></td>
+<td><code>face.eyes(24, 24)</code></td>
+<td><code>face.eyes(36, 36)</code></td>
+</tr>
+</tbody>
+</table>
+<p>The last row is the point. Three different displays, three different pixel counts, and the lab code
+above is the same shape every time. That is what abstraction is <em>for</em>.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Moved, Not Rewritten</p>
+<p><img alt="Pixel thinks it through" class="mascot-admonition-img" src="../../../img/mascot/thinking.png" />
+Refactoring means changing how code is organized without changing what it does. If my face looks different after this lab, something went wrong — a clean refactor is invisible from the outside.</p>
+</div>
+<h2 id="one-mouth-function-instead-of-six">One Mouth Function Instead of Six<a class="headerlink" href="#one-mouth-function-instead-of-six" title="Permanent link">&para;</a></h2>
+<p>Faces need more than one kind of mouth, and <code>face.py</code> gives you one function plus a <strong>style</strong> name
+that picks the shape:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">SMILE</span> <span class="o">=</span> <span class="s2">&quot;smile&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">FROWN</span> <span class="o">=</span> <span class="s2">&quot;frown&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">FLAT</span> <span class="o">=</span> <span class="s2">&quot;flat&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">OPEN</span> <span class="o">=</span> <span class="s2">&quot;open&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">SMIRK</span> <span class="o">=</span> <span class="s2">&quot;smirk&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">SNEER</span> <span class="o">=</span> <span class="s2">&quot;sneer&quot;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">mouth</span><span class="p">(</span><span class="n">style</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Draw whichever mouth `style` names.&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<p>That single function is what makes the next lab possible. Because the mouth style is now a <em>value</em>
+you can pass around, an entire expression can be written as a row of data instead of a block of
+code.</p>
+<h2 id="the-trade-you-are-making">The Trade You Are Making<a class="headerlink" href="#the-trade-you-are-making" title="Permanent link">&para;</a></h2>
+<p>Abstraction is not free, and pretending otherwise would be dishonest. When you hide the
+<code>shapes.ellipse()</code> calls behind <code>face.eyes()</code>, you hide them from yourself too. A beginner reading
+your program can no longer see how an eye is drawn without opening a second file.</p>
+<p>That trade is almost always worth it, and here is the rule of thumb: <strong>hide a detail once you have
+written it correctly three times.</strong> Before then, writing it out teaches you something. After then,
+writing it out just gives you three places to make the same typo.</p>
+<table>
+<thead>
+<tr>
+<th>Before <code>face.py</code></th>
+<th>After <code>face.py</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Every program has its own <code>draw_eye()</code></td>
+<td>One copy, in one file</td>
+</tr>
+<tr>
+<td>Fixing an eyebrow means editing 8 programs</td>
+<td>Fixing an eyebrow means editing 1 file</td>
+</tr>
+<tr>
+<td>You can see the <code>ellipse()</code> call right there</td>
+<td>You have to open <code>face.py</code> to see it</td>
+</tr>
+<tr>
+<td>New expression: copy 70 lines, then edit</td>
+<td>New expression: 3 lines</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">One file to rule them all</p>
+<p><img alt="Pixel celebrating" class="mascot-admonition-img" src="../../../img/mascot/celebration.png" />
+Your face parts now live in one place, which means every program you write from here on starts with a face already built. Great expression!</p>
+</div>
+<h2 id="things-to-try">Things to Try<a class="headerlink" href="#things-to-try" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Add a fourth expression.</strong> You should not need to write a single <code>shapes.ellipse()</code> call —
+   only <code>face.eyes()</code>, <code>face.eyebrows()</code>, and <code>face.mouth()</code> with different numbers.</li>
+<li><strong>Change <code>face.EYE_SPACING</code> from 72 to 90</strong> and run again. One edit just moved the eyes on every
+   expression at once. (Go too far and they start hitting the bezel, which is the round screen
+   reminding you it has opinions.)</li>
+<li><strong>Break it on purpose.</strong> Set <code>face.EYE_Y</code> to 330. Because every expression shares one definition,
+   every expression breaks the same way — which is exactly what makes the bug easy to find. Change
+   it back when you are done.</li>
+<li><strong>Compare this lab to lab 19.</strong> Same three expressions, roughly nine lines of drawing code
+   against lab 19's seventy, and every number you can still see is a number about <em>feeling</em> rather
+   than about pixels.</li>
+<li><strong>Call <code>face.text("Happy", 100, 200)</code></strong> somewhere and compare it to the label above. Same word,
+   same screen, but the small font next to the wide one — proof that a bigger screen made this text
+   proportionally smaller, not larger.</li>
+</ol>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../emotion-modes/">The Expression Menu</a> — the duplicated drawing code this lab consolidates</li>
+<li><a href="../emotion-table/">The Emotion Table</a> — what becomes possible once a mouth style is a value</li>
+<li><a href="../happy-face/">Your First Face</a> — where the eye spacing and mouth position numbers came from</li>
+<li><a href="../../smartwatch/face-module/index.md">The Face Module on the 1.2" kit</a> — the same lesson at 240×240, worth comparing to see exactly what scaled and what didn't</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

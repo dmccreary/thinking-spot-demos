@@ -1,0 +1,1013 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An intelligent textbook on how we build STEM kit demos at The Thinking Spot bookstore.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/thinking-spot-demos/kits/sw-gc9b72/state-machine/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>A Face With a Memory - Thinking Spot Demos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.9/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-face-with-a-memory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Thinking Spot Demos" class="md-header__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thinking Spot Demos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A Face With a Memory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Thinking Spot Demos" class="md-nav__button md-logo" aria-label="Thinking Spot Demos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Thinking Spot Demos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/thinking-spot-demos" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../why-custom-stem-kits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Custom STEM Kits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../one-pager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STEM Kits One-Pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overcoming-objections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overcoming Objections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-tables-are-the-whole-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two Tables Are the Whole Idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-state-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Each State Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-state-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Each State Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-loop-just-follows-the-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Loop Just Follows the Tables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-caption-had-to-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the Caption Had to Move
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#draw-it-on-paper-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Draw It on Paper First
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things to Try
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/thinking-spot-demos/blob/main/docs/kits/sw-gc9b72/state-machine/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="a-face-with-a-memory">A Face With a Memory<a class="headerlink" href="#a-face-with-a-memory" title="Permanent link">&para;</a></h1>
+<p>The <a href="../emotion-modes/">expression menu</a> had no memory. Press A and you get the next
+emotion, over and over, and the face reacts to your finger the same way no matter what happened ten
+seconds ago.</p>
+<p>Real creatures are not like that. Poke someone who is already annoyed and you get a different answer
+than poking someone who is asleep.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Give me a mood I can carry around</p>
+<p><img alt="Pixel waving welcome" class="mascot-admonition-img" src="../../../img/mascot/welcome.png" />
+Button A pokes me. Button B calms me down. Leave me alone long enough and I get bored, then fall asleep on my own — and what a poke means depends entirely on what I was doing when it arrived.</p>
+</div>
+<h2 id="two-tables-are-the-whole-idea">Two Tables Are the Whole Idea<a class="headerlink" href="#two-tables-are-the-whole-idea" title="Permanent link">&para;</a></h2>
+<p>A <strong>state machine</strong> is one of the most useful abstractions in all of computing — vending machines,
+traffic lights, game characters, and network protocols are all built on it. It needs only two
+things:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>The question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>States</strong></td>
+<td>What situations can this thing be in, one at a time?</td>
+</tr>
+<tr>
+<td><strong>Transitions</strong></td>
+<td>For each state, which event moves you where?</td>
+</tr>
+</tbody>
+</table>
+<p>Write both as tables and the main loop shrinks to "look up what happens next, then do it." Adding a
+whole new mood becomes two rows of data instead of another branch tangled into a growing pile of
+<code>if</code> statements.</p>
+<h2 id="what-each-state-looks-like">What Each State Looks Like<a class="headerlink" href="#what-each-state-looks-like" title="Permanent link">&para;</a></h2>
+<p>This first table is the <a href="../emotion-table/">emotion table</a>'s column format, reused without
+change:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#           eye_rx  eye_ry  brow_L  brow_R  lift  mouth        x   y</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">POSES</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="s2">&quot;Idle&quot;</span><span class="p">:</span>    <span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">FLAT</span><span class="p">,</span>  <span class="mi">45</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="s2">&quot;Curious&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">39</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span>   <span class="mi">8</span><span class="p">,</span>  <span class="mi">15</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">SMIRK</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="s2">&quot;Happy&quot;</span><span class="p">:</span>   <span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">8</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">SMILE</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="s2">&quot;Annoyed&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span>  <span class="mi">18</span><span class="p">,</span>  <span class="mi">18</span><span class="p">,</span>  <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">FLAT</span><span class="p">,</span>  <span class="mi">39</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="s2">&quot;Asleep&quot;</span><span class="p">:</span>  <span class="p">(</span><span class="mi">36</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">FLAT</span><span class="p">,</span>  <span class="mi">21</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Notice Curious: one brow at −11 and the other at 8. That single mismatch is what makes it read as
+interested rather than merely awake.</p>
+<h2 id="what-each-state-does">What Each State Does<a class="headerlink" href="#what-each-state-does" title="Permanent link">&para;</a></h2>
+<p>This is a different question, and it gets its own table. Read a row like a sentence: <em>"from Idle, A
+leads to Curious, B leads to Annoyed, and after 8000 ms of nobody touching anything, we fall
+Asleep."</em></p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">#          state         A -&gt; ...     B -&gt; ...     after ms -&gt; ...</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">TRANSITIONS</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="s2">&quot;Idle&quot;</span><span class="p">:</span>    <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;Curious&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;Annoyed&quot;</span><span class="p">,</span> <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="s2">&quot;Asleep&quot;</span><span class="p">)},</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="s2">&quot;Curious&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;Happy&quot;</span><span class="p">,</span>   <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;Idle&quot;</span><span class="p">,</span>    <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="s2">&quot;Idle&quot;</span><span class="p">)},</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="s2">&quot;Happy&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;Happy&quot;</span><span class="p">,</span>   <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;Idle&quot;</span><span class="p">,</span>    <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">4000</span><span class="p">,</span> <span class="s2">&quot;Idle&quot;</span><span class="p">)},</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="s2">&quot;Annoyed&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;Asleep&quot;</span><span class="p">,</span>  <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;Idle&quot;</span><span class="p">,</span>    <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">6000</span><span class="p">,</span> <span class="s2">&quot;Idle&quot;</span><span class="p">)},</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="s2">&quot;Asleep&quot;</span><span class="p">:</span>  <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;Curious&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="s2">&quot;Curious&quot;</span><span class="p">,</span> <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Worth noticing: of the two tables on this page, only <strong>one</strong> changed when this lab crossed over
+from the smaller kit. <code>POSES</code> is full of pixels, so every number in it was multiplied by 1.5.
+<code>TRANSITIONS</code> has no pixels in it at all — just state names and millisecond timeouts — so it is
+character for character the same table on both kits. A state machine is a fact about <em>behavior</em>,
+and behavior does not have a resolution.</p>
+<p>Three kinds of event drive the machine, and the third one is what makes the robot feel alive:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Where it comes from</th>
+<th>What it models</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td>Button A</td>
+<td>Somebody poked the robot</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>Button B</td>
+<td>Somebody calmed it down</td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>The clock</td>
+<td>Nothing happened for long enough to matter</td>
+</tr>
+</tbody>
+</table>
+<p>A robot that changes on its own, with nobody touching it, is doing something no menu can do.</p>
+<h2 id="the-loop-just-follows-the-tables">The Loop Just Follows the Tables<a class="headerlink" href="#the-loop-just-follows-the-tables" title="Permanent link">&para;</a></h2>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">rules</span> <span class="o">=</span> <span class="n">TRANSITIONS</span><span class="p">[</span><span class="n">state</span><span class="p">]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">if</span> <span class="n">face</span><span class="o">.</span><span class="n">pressed</span><span class="p">(</span><span class="n">button_a</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">face</span><span class="o">.</span><span class="n">wait_for_release</span><span class="p">(</span><span class="n">button_a</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="n">go_to</span><span class="p">(</span><span class="n">rules</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">],</span> <span class="s2">&quot;poke&quot;</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">elif</span> <span class="n">face</span><span class="o">.</span><span class="n">pressed</span><span class="p">(</span><span class="n">button_b</span><span class="p">):</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">face</span><span class="o">.</span><span class="n">wait_for_release</span><span class="p">(</span><span class="n">button_b</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">go_to</span><span class="p">(</span><span class="n">rules</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="s2">&quot;calm&quot;</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="k">elif</span> <span class="n">rules</span><span class="p">[</span><span class="s2">&quot;timeout&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="n">after_ms</span><span class="p">,</span> <span class="n">next_state</span> <span class="o">=</span> <span class="n">rules</span><span class="p">[</span><span class="s2">&quot;timeout&quot;</span><span class="p">]</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="k">if</span> <span class="n">ticks_diff</span><span class="p">(</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="n">entered_at</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">after_ms</span><span class="p">:</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="n">go_to</span><span class="p">(</span><span class="n">next_state</span><span class="p">,</span> <span class="s2">&quot;waited &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">after_ms</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;ms&quot;</span><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Notice what that loop does <strong>not</strong> contain: the word "Happy", the word "Asleep", or any knowledge of
+what a poke means. All of that lives in the tables.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">One Door In, One Door Out</p>
+<p><img alt="Pixel thinks it through" class="mascot-admonition-img" src="../../../img/mascot/thinking.png" />
+<code>go_to()</code> is the only place in the program that changes state, and it prints every change to the shell. Funnelling every change through one function means there is exactly one line to watch when I end up somewhere you did not expect.</p>
+</div>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">go_to</span><span class="p">(</span><span class="n">next_state</span><span class="p">,</span> <span class="n">because</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The only place in the program that changes state. Funnelling every</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">    change through one function means there is exactly one line to watch</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="sd">    when the face ends up somewhere you did not expect.&quot;&quot;&quot;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">entered_at</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">because</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">next_state</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">entered_at</span> <span class="o">=</span> <span class="n">ticks_ms</span><span class="p">()</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">draw_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Here's the starting state:</p>
+<p><img alt="The word Idle at the top of the circle above a neutral face with flat eyebrows, round eyes with dark pupils, and a flat horizontal mouth" src="sample-output.png" /></p>
+<p>Press a button — or wait eight seconds — and the machine moves somewhere else.</p>
+<h2 id="where-the-caption-had-to-move">Where the Caption Had to Move<a class="headerlink" href="#where-the-caption-had-to-move" title="Permanent link">&para;</a></h2>
+<p><code>draw_state()</code> calls <code>face.label(name, y=LABEL_Y)</code>, and <code>LABEL_Y</code> here is 32, not the smartwatch
+kit's default of 30 scaled up to 45. The reason is the same font trap as everywhere else on this
+kit: <code>face.label()</code> draws in the 16×32 font here, twice as tall as the smartwatch kit's 8×16, while
+every position around it only grew 1.5×. A caption left at the naively-scaled row 45 would paint its
+black glyph background all the way down to row 76 — and Curious lifts its eyebrows to row 67, so the
+inner tip of one brow would vanish under the name. It would look like a drawing bug and it would
+really be a font that refused to scale.</p>
+<p>Row 32 puts the caption's bottom edge at row 63, four rows clear of the highest brow this lab ever
+draws, and the safe circle is still about 159 pixels wide up there — comfortable for the 112 pixels
+that "Curious" and "Annoyed", the longest names here, actually need.</p>
+<h2 id="draw-it-on-paper-first">Draw It on Paper First<a class="headerlink" href="#draw-it-on-paper-first" title="Permanent link">&para;</a></h2>
+<p>Five circles, one per state. Fourteen arrows, one per transition, each labelled A, B, or its
+timeout. That drawing <strong>is</strong> the two tables above, and it is how engineers design this kind of code
+before writing any of it.</p>
+<p>Doing it on paper will also show you something the code hides: which states are hard to reach, and
+which ones you can never leave.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Find the Trap</p>
+<p><img alt="Pixel giving a tip" class="mascot-admonition-img" src="../../../img/mascot/tip.png" />
+From Happy, button A leads back to Happy forever. Is that a bug or a personality? Change it to "Annoyed" and see whether a robot that gets tired of being poked feels more alive.</p>
+</div>
+<h2 id="things-to-try">Things to Try<a class="headerlink" href="#things-to-try" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Draw the machine on paper</strong> — five circles, fourteen arrows — before you change anything.</li>
+<li><strong>Add a "Startled" state:</strong> eyes wide, brows way up, mouth open. Give it a 700 ms timeout back to
+   Curious, and make Asleep + A go to Startled instead. Two rows of data, no new logic — waking a
+   sleeping robot should surprise it. Pick the brow lift carefully: past 14, the note above <code>LABEL_Y</code>
+   warns you the brows start pushing up under the caption.</li>
+<li><strong>Decide about the Happy trap</strong> described in the tip above.</li>
+<li><strong>Watch the shell while you play.</strong> Every transition prints, so you get a written history of the
+   robot's mood — the technique from <a href="../trace-and-watch/">Trace and Watch</a>, aimed at
+   behavior instead of speed.</li>
+<li><strong>Optimize the redraw.</strong> <code>draw_state()</code> calls <code>face.clear()</code> on every transition, and on this
+   screen that is 129,600 pixels — 259,200 bytes down the SPI wire — so you can watch the wipe
+   happen. Because states change at most a few times a second, that is still a defensible choice.
+   Rewrite it to erase only the boxes that differ between the old pose and the new one, then decide
+   for yourself whether the extra bookkeeping earned its keep. There is no single right answer, and
+   knowing that is the skill.</li>
+</ol>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../emotion-table/">The Emotion Table</a> — the pose format this lab reuses for <code>POSES</code></li>
+<li><a href="../modes/">Mode Switching</a> — the memoryless menu this lab is an answer to</li>
+<li><a href="../sleepy/">Sleeping Face</a> — the expression the Asleep state is heading toward</li>
+<li><a href="../../smartwatch/state-machine/index.md">A Face With a Memory on the 1.2" kit</a> — same lesson at 240×240, where <code>TRANSITIONS</code> is the identical table and <code>face.label()</code> never had to move</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
