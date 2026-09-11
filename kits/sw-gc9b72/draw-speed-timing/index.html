@@ -376,6 +376,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../list-of-stem-kits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    List of STEM Kits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../overcoming-objections/" class="md-nav__link">
         
   
@@ -795,10 +822,10 @@ This is my favorite result in the whole kit, because the answer is not "the fast
 <h2 id="the-ellipse-equation-without-division">The Ellipse Equation, Without Division<a class="headerlink" href="#the-ellipse-equation-without-division" title="Permanent link">&para;</a></h2>
 <p>The dots version is worth reading on its own, because it contains a trick worth keeping. The ellipse
 equation says a point is inside when:</p>
-<div class="arithmatex">\[\frac{dx^2}{r_x^2} + \frac{dy^2}{r_y^2} \le 1\]</div>
+<p>$$\frac{dx^2}{r_x^2} + \frac{dy^2}{r_y^2} \le 1$$</p>
 <p>Division is slow and inexact, so multiply both sides out first. The same test becomes whole-number
 arithmetic with no division at all:</p>
-<div class="arithmatex">\[dx^2 \cdot r_y^2 + dy^2 \cdot r_x^2 \le r_x^2 \cdot r_y^2\]</div>
+<p>$$dx^2 \cdot r_y^2 + dy^2 \cdot r_x^2 \le r_x^2 \cdot r_y^2$$</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">dot_ellipse</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">fill</span><span class="p">,</span> <span class="n">bottom_half</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">rx2</span> <span class="o">=</span> <span class="n">rx</span> <span class="o">*</span> <span class="n">rx</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">ry2</span> <span class="o">=</span> <span class="n">ry</span> <span class="o">*</span> <span class="n">ry</span>
