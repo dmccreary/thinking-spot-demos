@@ -1,16 +1,58 @@
+/* ==========================================================================
+   Thinking Spot brand color theme
+   Colors sampled directly from docs/img/thinking-spot-logo-on-white.jpg:
+     --tsp-purple  #602551  trunk + arced "THE THINKING SPOT" text
+     --tsp-green   #93D30A  canopy leaves + open-book pages
+     --tsp-yellow  #FBD700  canopy leaves
+     --tsp-orange  #FC6619  canopy leaves
+   mkdocs.yml sets palette.primary/accent to `custom` — Material's named
+   palette has no purple this dark, so the actual colors live here as the
+   CSS custom properties Material reads for a custom scheme. See:
+   https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#custom-colors
+
+   Contrast check (WCAG, against white #fff): purple 11.2:1 (AAA — safe for
+   header text and body links), orange 3.0:1 (fails AA for sustained body
+   text but is only used for hover/focus accents here, never paragraph
+   text). Green/yellow are far too light for text on white (1.4-1.8:1) and
+   are kept as raw --tsp-* variables for badges/fills with a dark
+   background or dark text, not for text-on-white use. */
+:root {
+  --tsp-purple:       #602551;
+  --tsp-purple-light: #94397C;
+  --tsp-purple-dark:  #38152F;
+  --tsp-green:  #93D30A;
+  --tsp-yellow: #FBD700;
+  --tsp-orange: #FC6619;
+
+  /* Primary: header/nav background, body link color */
+  --md-primary-fg-color:        var(--tsp-purple);
+  --md-primary-fg-color--light: var(--tsp-purple-light);
+  --md-primary-fg-color--dark:  var(--tsp-purple-dark);
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+
+  /* Accent: hovered links, active tab/underline, focus rings */
+  --md-accent-fg-color:              var(--tsp-orange);
+  --md-accent-fg-color--transparent: rgba(252, 102, 25, 0.1);
+  --md-accent-bg-color:              #ffffff;
+  --md-accent-bg-color--light:       hsla(0, 0%, 100%, 0.7);
+}
+
 .md-header__button.md-logo {
     margin: 0;
     padding: 0;
 }
 .md-header__button.md-logo img, .md-header__button.md-logo svg {
     height: 60px;
-    width: 60px;
+    width: auto;
+    /*
     object-fit: contain;
     background-color: #aaaaaa;
     border-radius: 50%;
     padding: 4px;
     box-sizing: border-box;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    */
 }
 
 /* Container to control the iframe size and scaling */
